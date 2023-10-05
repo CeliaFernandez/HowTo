@@ -1,5 +1,21 @@
 # Development
 
+## Test with runTheMatrix.py
+
+Note: Used 11650.0 as reference for examples.
+
+Show a workflow **only**:
+```
+runTheMatrix.py -n -e -l 11650.0
+```
+that can be run by omitting `-n`:
+```
+runTheMatrix.py -e -l 11650.0
+```
+
+Documented workflows:
+* 11650.0: `ZMM_14TeV_TuneCP5_2021_GenSim+Digi_2021+RecoNanoFakeHLT_2021+HARVESTNanoFakeHLT_2021+ALCA_2021`
+
 ## Work on top of remote CMSSW
 
 ### Use of cherry-pick
