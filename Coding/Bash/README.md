@@ -5,9 +5,12 @@
 Get the name of one file from abs path:
 
 ```ruby
-basename path/to/file
+filepath="path/to/file"
+# To define a variable:
+filename="$(basename $filepath)"
 ```
-would return `file`.
+
+in this case `filename` would be `"file"`.
 
 ## Routined for strings
 
