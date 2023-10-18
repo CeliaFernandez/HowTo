@@ -38,3 +38,26 @@ pip3 install hist==2.6.3
 You may also need to create the `results/` dir before running tests as it is not created by default.
 
 ## Run tests
+
+Before running anything always run: `source setup.sh`
+
+To run a threshold scan for a single pixel (row 15, col 0) use:
+ 
+```ruby
+ipython3 -i test_ETROC.py -- --test_chip --hard_reset --module 1 --kcu 192.168.0.10 --configuration modulev0 --scan internal --row 15 --col 0
+```
+
+To run a threshold scan for the entire chip:
+
+```ruby
+ipython3 -i test_ETROC.py -- --test_chip --hard_reset --module 1 --kcu 192.168.0.10 --configuration modulev0 --scan full
+```
+
+To run basic charge injection tests:
+
+```ruby
+ipython3 -i test_ETROC.py -- --test_chip --hard_reset --module 1 --kcu 192.168.0.10 --configuration modulev0 --qinj
+```
+
+
+
