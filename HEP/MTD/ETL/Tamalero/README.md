@@ -47,6 +47,10 @@ To run a threshold scan for a single pixel (row 15, col 0) use:
 ipython3 -i test_ETROC.py -- --test_chip --hard_reset --module 1 --kcu 192.168.0.10 --configuration modulev0 --scan internal --row 15 --col 0
 ```
 
+The output should be an S-curve like this:
+![alt text](https://github.com/CeliaFernandez/HowTo/tree/main/HEP/MTD/ETL/Tamalero/pngs/scan_internal_row_15_col_0_20231016_172239.png)
+
+
 To run a threshold scan for the entire chip:
 
 ```ruby
