@@ -1,0 +1,16 @@
+executable      = $ENV(HERE)/testCondor_executable.sh
+output          = $ENV(HERE)/condorTest-logs/job.$(ClusterId).$(ProcId).out
+error           = $ENV(HERE)/condorTest-logs/job.$(ClusterId).$(ProcId).err
+log             = $ENV(HERE)/condorTest-logs/job.$(ClusterId).$(ProcId).log
+
+getenv = True
++JobFlavour = "espresso"
++DESIRED_Sites = "T2_US_Nebraska"
+transfer_input_files = $ENV(HERE)/package.tar.gz
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+x509userproxy=$ENV(X509_USER_PROXY)
+use_x509userproxy = True
+
+# Comment out any of the following configurations
+queue arguments from ( )
