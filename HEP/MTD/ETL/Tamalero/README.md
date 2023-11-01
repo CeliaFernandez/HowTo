@@ -63,5 +63,30 @@ To run basic charge injection tests:
 ipython3 -i test_ETROC.py -- --test_chip --hard_reset --module 1 --kcu 192.168.0.10 --configuration modulev0 --qinj
 ```
 
+## Some definitions
+
+### L1A
+
+L1A is Level 1 Acceptance. Given a satisfactory event reconstruction from the other subsystems in CMS, a L1A will be issued to the ETL/ETROC, which will tell it to pull data from some predetermined location in the buffer. The buffer can have header words(beginning of pull), data words, or trailer words (end of pull or no data). The data words contain individual hit information, with associated pixel, toa, tot, etc.
+
+When looking for data, we will use the KCU to pulse L1As. This is useful when correctly timed with charge injection, so that we get out only/all of the data associated with the charge injection it is paired with
+
+## Noise scans (from Joshua)
+
+Noise scans are *produced in absence of signal*.
+The two S-curves in the pixels are both produced with just noise.
+
+- The blue curve (internal) is from the threshold calibration in the ETROC.
+The accumulation register just accumulates samples and counts if the sample is higher than the discriminator. As such, you get an S-shape curve as the threshold rises above the noise. An accumulation of 1 is the same as being fully saturated.
+
+- The red curve (external) is done by trying to fing hits. When the accumulation drops, you have reached the point where the discriminator is set on par with the peaks of the  fluctuations in the noise. Consequnetially, you will have rising edges and therefore hits. The red curve just sends a ton of L1As in a similar sampling method, but looking for hits. As you move the threshold through the range of the noise, you get some gaussian-like peak of the number of hits measured. 
+
+Both the red curve and blue curve then should die out as you exit the noise range, and, ideally, the best place to put the threshold is some distance beyond these curves bottoming out.
+When we add Qinj, we broaden the red curve.
+
+
+
+
+
 
 
