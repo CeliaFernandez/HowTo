@@ -63,6 +63,19 @@ To run basic charge injection tests:
 ipython3 -i test_ETROC.py -- --test_chip --hard_reset --module 1 --kcu 192.168.0.10 --configuration modulev0 --qinj
 ```
 
+## Commands
+
+Test tamalero command:
+
+```
+ipython3 -i test_tamalero.py -- --kcu 192.168.0.11 --verbose --adcs --configuration modulev0b
+```
+
+We should add `--power_up` if we did power cycle.
+
+If `TAMALERO` appears in green indicates that the [...] is turned on. The first time that `test_tamalero.py` is run after `--power_up`it should appear in red color.
+
+
 ## Some definitions
 
 ### L1A
