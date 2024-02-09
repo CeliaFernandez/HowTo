@@ -1,4 +1,19 @@
-# Importing others work in your repo
+# Branch and PR change and movement
+
+## How to work on a remote branch
+
+Fetch the remote repo:
+```git fetch```
+Then, show all the branches, ```remotes/*```branches are the ones available in each remote:
+```
+git branch -a -v
+```
+Then you can create a new local branch out of it by doing:
+```
+git swicth [branch name]
+```
+where the remote is guessed by Github.
+
 
 ## How to clone the code from a given PR which wasn't merged yet
 
