@@ -1,5 +1,33 @@
 # Notes
 
+## SM resonances appearing as background
+
+### $K_S$ meson
+
+We have the decays $K_S\rightarrow\pi^+\pi^-$ in which the pions are reconstructed as muons.
+
+We have the $K^0(d\bar(s))$ and the $\bar{K}^0(s\bar(d))$ neutral kaons, but none of them are eigenstates of CP. The eigen states of the kaons are:
+
+$$|K_S\rangle = |K_1\rangle = \dfrac{1}{\sqrt{2}}(|K^0\rangle - |\bar{K^0}\rangle) = \dfrac{1}{\sqrt{2}}(d\bar(s) - s\bar(d))$$
+
+$$|K_L\rangle = |K_2\rangle = \dfrac{1}{\sqrt{2}}(|K^0\rangle + |\bar{K^0}\rangle) = \dfrac{1}{\sqrt{2}}(d\bar(s) + s\bar(d))$$
+
+$K_L$ is long-lived ($8.9\cdot10^{-11}$ s), because it only decays to $3\pi$ states without violating CP, while $K_S$ is short-lived ($5.2\cdot10^{-8}$ s). However, we do see displaced $K_S$ due to the high velocities of these kaons.
+
+### $\eta$ meson
+
+### $\rho/\omega$ meson
+
+### $\phi$ meson
+
+The $\phi$ meson is a $s\bar{s}$ state with a mass of 1.019 GeV. It's not long-lived, with a lifetime of $1.55\cdot10^{-22}$ seconds, but it can be produced from $B$ or $D$ decays.
+
+### $J/\psi$ meson
+
+### $\Psi (2S)$ meson
+
+### Upsilon
+
 ## Lifetime reweighting
 
 A weight is applied to obtain a sample of a smaller lifetime from a one with a larger lifetime. The weight takes the form:
