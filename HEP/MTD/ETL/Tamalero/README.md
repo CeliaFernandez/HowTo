@@ -1,6 +1,6 @@
 # Tamalero
 
-## Access BU computer and test stands
+## Access BU computer 
 
 Once I have provided a `.pub` key I can access with:
 
@@ -8,16 +8,21 @@ Once I have provided a `.pub` key I can access with:
 ssh celia@strange.bu.edu
 ```
 
+## Test stand configuration
+
 KCU board IP:
 
   - `192.168.0.10`: upper shelf
   - `192.168.0.11`: lower one that has the module with the LGAD hooked up
   - `192.168.0.12`: used for CI
 
+The **KCU IP is configured manually**. In order to do so, you should connect the KCU to the same ethernet port of the computer and define a given IP that is free. You have to open your **network settings**, naviate to the **IPv4 tab** of the ethernet port connected to the KCU, switch to 'Manual' Set the **address** to ```192.168.0.XXX``` and **Netmask** to ```255.255.0.0```. The numbers ```XXX``` can be any value not already taken on the network. For simple setups with only the KCU and no other hardware 20 is a good default value.
+
+The KCU assigns a ```1X``` number based on the configuration of the control box of the KCU from 0 to 4:
+<img src="https://github.com/user-attachments/assets/f112fa80-e625-44b9-a6b0-2432b6670160" alt="KCUIP" width="300"/>
+
 Every time that something is pushed there is a pipeline that runs over all stands:
 https://gitlab.cern.ch/cms-etl-electronics/module_test_sw/-/pipelines/6347108
-
-
 
 ## Install Tamalero
 
