@@ -1,5 +1,12 @@
 # Bash routines
 
+## Fast in-line commands
+
+Execute a command in every directory, e.g. ```crab resubmit```:
+```
+for dir in $(ls -d crab_*/); do crab resubmit "$dir"; done
+```
+
 ## File information and similar
 
 Get the name of one file from abs path:
