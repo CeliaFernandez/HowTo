@@ -29,6 +29,60 @@ ant clean && ./start #its best to do a full clean each time when starting the gu
 
 ## Locally from the MAC
 
+### Using conda
+
+We do an environmnet ```environment.yml``` with this:
+
+```
+name: EF_java
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - bzip2=1.0.8=h620ffc9_4
+  - ca-certificates=2023.12.12=hca03da5_0
+  - expat=2.5.0=h313beb8_0
+  - libcxx=16.0.6=h4653b0c_0
+  - libffi=3.4.4=hca03da5_0
+  - libzlib=1.2.13=h53f4e23_5
+  - ncurses=6.4=h313beb8_0
+  - openjdk=21.0.2=hbeb2e11_0
+  - openssl=3.2.1=h0d3ecfb_0
+  - pip=23.3.1=py312hca03da5_0
+  - python=3.12.1=h99e199e_0
+  - readline=8.2=h1a28f6b_0
+  - setuptools=68.2.2=py312hca03da5_0
+  - sqlite=3.41.2=h80987f9_0
+  - tk=8.6.12=hb8d0fd4_0
+  - tzdata=2023d=h04d1e81_0
+  - wheel=0.41.2=py312hca03da5_0
+  - xz=5.4.5=h80987f9_0
+  - zlib=1.2.13=h53f4e23_5
+prefix: /opt/anaconda3/envs/EF_java
+```
+(prefix may need to be changed depending on where you have installed anaconda3, miniconda3 or whatever package you use)
+
+Then create the environment:
+```
+conda env create -f environment.yml
+```
+and activate the environment:
+```
+conda activate EF_java
+```
+
+We need to tunnel through lxplus, which can be done:
+```
+ssh -f -N -D 1080 lxplus.cern.ch
+```
+
+Then we start the GUI as above, with:
+```
+ant clean && ./start
+```
+
+### Using podman (not working)
+
 Download TigerVNC from [here](https://sourceforge.net/projects/tigervnc/). Also the GitLab repo with the images for podman [here](https://gitlab.cern.ch/cms-tsg/storm/confdb-container).
 
 Use podman to start a container
