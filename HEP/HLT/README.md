@@ -8,10 +8,10 @@ General instructions to re-HLT a sample can be found [here](https://twiki.cern.c
 For MC, we can only re-HLT GEN-SIM-RAW samples as the information available in further formats is not enough to emulate the L1. Main command that can be used for that is:
 
 ```
-hltGetConfiguration /dev/CMSSW_14_2_0/GRun --globaltag auto:phase1_2024_realistic  --input /store/mc/Run3Winter24Digi/TT_TuneCP5_13p6TeV_powheg-pythia8/GEN-SIM-RAW/133X_mcRun3_2024_realistic_v8-v2/80000/dc984f7f-2e54-48c4-8950-5daa848b6db9.root  --max-events 100  --mc --unprescale --output none  --eras Run3_2024 --l1-emulator uGT --l1 L1Menu_Collisions2024_v1_3_0_xml --paths ScoutingPFOutput,DST_PFScouting_ZeroBias*,Dataset_ScoutingPFRun3 > hlt.py
+hltGetConfiguration /users/fernance/2025Scouting/ppMenuPrep/DoubleMuVtx/HLT2/V6 --globaltag auto:phase1_2024_realistic --input /store/user/fernance/GENHLT_Scouting/HTo2ZdTo2mu2x_MZd-6_ctau-10mm-pythia8/private-RunIII2024Summer24-HLTnoPU/241020_202318/0000/EXO-digi-hlt_1.root --max-events 100 --mc --unprescale --output none --eras Run3_2024 --l1-emulator uGT --l1 L1Menu_Collisions2024_v1_3_0_xml --paths ScoutingPFOutput,DST_PFScouting_*,Dataset_ScoutingPFRun3 > hlt.py
 #
-echo 'process.hltL1sZeroBias = cms.EDFilter( "HLTBool", result = cms.bool( True ))' >> hlt.py
-echo 'process.hltDatasetScoutingPFRun3.triggerConditions = ["DST_PFScouting_ZeroBias_v4"]' >> hlt.py
+echo 'process.hltOutputScoutingPF.outputCommands.extend(["keep *_genParticles_*_*"])' >> hlt.py
+echo 'process.options.wantSummary = False' >> hlt.py
 ```
 
 # confDB
